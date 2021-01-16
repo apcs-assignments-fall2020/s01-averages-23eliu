@@ -45,9 +45,33 @@ public class MyMain {
     
 
     // Returns the mode of the 2D array mat
-    public static double mode(double[][] mat) { 
-        // YOUR CODE HERE
-        return -1.0;
+    public static double mode(double[][] mat) {
+        int count = 0;
+        int temp = 0;
+        double num = 0;
+        for (int row = 0; row < mat.length; row++) {
+			for (int col = 0; col < mat[0].length; col++) {
+
+                double test = mat[row][col];
+                for (int row1 = 0; row1 < mat.length; row1++) {
+			        for (int col1 = 0; col1 < mat[0].length; col1++) {
+				        if (mat[row1][col1] == test) {
+                            count++;
+                        }
+			        }
+                }
+                if (count > temp) {
+                    num = test;
+                    temp = count;
+                    count = 0;
+                }
+                else {
+                    continue;
+                }
+			}
+        }
+        
+        return num;
     }
 
 
