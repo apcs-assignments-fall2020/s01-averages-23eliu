@@ -28,12 +28,19 @@ public class MyMain {
         }
 
         if (row%2 == 0) {
-            int userow1 = mat.length/2 - 1;
-            int userow2 = mat.length/2;
+            int userow1 = row/2 - 1;
+            int userow2 = row/2;
             double first = mat[userow1][col - 1];
             double second = mat[userow2][0];
             return (first + second)/2;
         }
+
+        int userow = row/2;
+        int usecol1 = col/2 - 1;
+        int usecol2 = col/2;
+        double first = mat[userow][usecol1];
+        double second = mat[userow][usecol2];
+        return (first + second)/2;
     }
     
 
